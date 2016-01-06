@@ -7,10 +7,13 @@ describe("Thermostat", function(){
     thermostat = new Thermostat();
   });
 
+describe("Initialize thermostat", function(){
   it('has a starting temperature of 20', function(){
     expect(thermostat.temperature).toEqual(20)
   });
+});
 
+describe("Changes temperature", function(){
   it('increases tempurature by 1 with up button', function(){
     thermostat.up();
     expect(thermostat.temperature).toEqual(21);
@@ -28,15 +31,6 @@ describe("Thermostat", function(){
   it('shows minimum temperature', function(){
     expect(thermostat.minimum_temperature).toEqual(10);
   });
-
-  it('throws an error when going below minimum temperature', function(){
-    thermostat.temperature = 10;
-    expect(function(){thermostat.down();}).toThrowError("Minimum temperature is 10 degrees")
-  });
-  it('throws an error when power saving mode is already on', function(){
-    expect(function(){thermostat.turnOnPowerSaving();}).toThrowError("Power saving mode is already on");
-  });
-
   it('has a maximum temperature 25 when power saving mode is switched on', function(){
     thermostat.turnOffPowerSaving();
     thermostat.turnOnPowerSaving();
@@ -52,4 +46,31 @@ describe("Thermostat", function(){
      thermostat.reset();
      expect(thermostat.temperature).toEqual(20);
   });
+});
+
+describe("Errors", function(){
+  it('throws an error when power saving mode is already on', function(){
+    expect(function(){thermostat.turnOnPowerSaving();}).toThrowError("Power saving mode is already on");
+  });
+
+  it('throws an error when going below minimum temperature', function(){
+    thermostat.temperature = 10;
+    expect(function(){thermostat.down();}).toThrowError("Minimum temperature is 10 degrees")
+  });
+});
+
+describe("Colors", function(){
+  it('returns the color green when temperature is below 18', function(){
+    thermostat.temperature = 17;
+    expect(thermostat.colour()).toEqual("Green");
+  });
+  it('returns the color yellow when temperature is below 25', function(){
+    thermostat.temperature = 22;
+    expect(thermostat.colour()).toEqual("Yellow");
+  });
+  it('returns the color red when temperature is equal or above 25', function(){
+    thermostat.temperature = 27;
+    expect(thermostat.colour()).toEqual("Red");
+  });
+ });
 });

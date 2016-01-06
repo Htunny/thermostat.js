@@ -19,12 +19,21 @@ Thermostat.prototype.down = function(){
   return this.temperature -= 1;
 };
 Thermostat.prototype.turnOnPowerSaving = function(){
-  if(this.maximum_temperature === 25) throw new Error("Power saving mode is already on");
-  else (this.maximum_temperature = 25);
+  if(this.maximum_temperature === 25)
+  {throw new Error("Power saving mode is already on");}
+  else
+  if (this.temperature >= 25)
+    {this.temperature = 25};
+    {this.maximum_temperature = 25;}
 };
 Thermostat.prototype.turnOffPowerSaving = function(){
   return this.maximum_temperature = 32;
 };
 Thermostat.prototype.reset = function(){
   return this.temperature = 20;
+};
+Thermostat.prototype.colour = function(){
+  if (this.temperature < 18) { return "Green"}
+  else if (this.temperature < 25) { return "Yellow"}
+  else if (this.temperature >= 25) { return "Red"}
 };
