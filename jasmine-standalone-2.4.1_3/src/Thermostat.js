@@ -7,8 +7,8 @@ function Thermostat(){
 
 Thermostat.prototype.up = function(){
   if(this.temperature >= this.maximum_temperature){
-    alert("Cannot go above maximum temperature");
-    throw new Error("Cannot go above maximum temperature");
+    alert("Maximum temperature is 32 degrees");
+    throw new Error("Maximum temperature is 32 degrees");
   }
   return this.temperature += 1;
 };

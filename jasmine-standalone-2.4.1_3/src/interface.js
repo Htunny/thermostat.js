@@ -41,6 +41,7 @@ $(document).ready(function() {
       $("#icon").text( json.weather.icon );
     }
 
+
   });}
 
   $('#submit_name').click(function() {

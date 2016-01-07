@@ -6,7 +6,7 @@
    </head>
   <body>
     <img src='http://icedtea.classpath.org/thermostat/img/thermostat_logo_450px.png'>
-    <h2> Version 2.0 </h2>
+    <h3> Version 2.0 </h3>
   <p>
      <h3><span id="current-temperature"></span>˚C</h3>
       <button class="temperature-down">-</button>
@@ -14,8 +14,15 @@
       <button class="temperature-reset">reset</button>
      <br>
      <br>
-      Power saving mode is <span id="power-saving-status">ON</span>
+      Power saving mode: <span id="power-saving-status">ON</span>
       <br>
+      <!-- <div class="onoffswitch">
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitc" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label> -->
+</div>
       <button id="powersaving-on">PSM on</button>
       <button id="powersaving-off">PSM off</button>
       <br>
@@ -58,6 +65,7 @@
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="../src/thermostat.js"></script>
   <script src="../src/interface.js"></script>
+
 
 </body>
 </html>
