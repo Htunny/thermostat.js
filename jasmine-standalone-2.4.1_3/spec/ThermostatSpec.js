@@ -66,7 +66,7 @@ describe("Energy usage", function(){
   });
   it('returns Medium when temperature is below 25', function(){
     thermostat.temperature = 22;
-    expect(thermostat.energyUsage()).toEqual("MEDIUM");
+    expect(thermostat.energyUsage()).toEqual("MODERATE");
   });
   it('returns High when temperature is equal or above 25', function(){
     thermostat.temperature = 27;
