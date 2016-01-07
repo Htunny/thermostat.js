@@ -1,14 +1,23 @@
-$.ajax({
+function get_data () { $.ajax({
 
-url:"api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=4db7936adac8e360e07f2f6e0b70d42f",
+url:"http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=4db7936adac8e360e07f2f6e0b70d42f",
 
 type: "GET",
 
 dataType : "json",
 
+data: {
+  units: "metric"
+},
+
 success: function( json ) {
-        $( "#weather" ).text( json.title ).appendTo( "body" );}
-});
+        $( "#name" ).text( json.name );
+        $("#condition").text( json.weather[0].main + ': ' + json.weather[0].description);
+        $("#retrieved_temperature").text( Math.round(json.main.temp) + 'C');
+        $("#wind").text(json.wind.speed + ' meter/sec');
+      }
+
+});}
 
 $(document).ready(function() {
   var thermostat = new Thermostat();
@@ -19,6 +28,7 @@ $(document).ready(function() {
   }
 
   energytemp();
+  get_data();
 
   $('.temperature-change').click(function() {
     thermostat[this.dataset.direction]();
@@ -39,7 +49,6 @@ $(document).ready(function() {
     thermostat.turnOffPowerSaving();
     $('#power-saving-status').text('off');
   });
-
 
 
 });
