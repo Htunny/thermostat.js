@@ -1,24 +1,3 @@
-function get_data () { $.ajax({
-
-url:"http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=4db7936adac8e360e07f2f6e0b70d42f",
-
-type: "GET",
-
-dataType : "json",
-
-data: {
-  units: "metric"
-},
-
-success: function( json ) {
-        $( "#name" ).text( json.name );
-        $("#condition").text( json.weather[0].main + ': ' + json.weather[0].description);
-        $("#retrieved_temperature").text( Math.round(json.main.temp) + 'C');
-        $("#wind").text(json.wind.speed + ' meter/sec');
-      }
-
-});}
-
 $(document).ready(function() {
   var thermostat = new Thermostat();
 
@@ -29,6 +8,35 @@ $(document).ready(function() {
 
   energytemp();
   get_data();
+
+  function get_data (name) {
+
+    var city_name = name || 'London';
+
+    $.ajax({
+
+    url:"http://api.openweathermap.org/data/2.5/weather?q={input_name}&APPID=4db7936adac8e360e07f2f6e0b70d42f".supplant({input_name: city_name}),
+
+    type: "GET",
+
+    dataType : "json",
+
+    data: {
+      units: "metric"
+    },
+
+    success: function( json ) {
+      $( "#name" ).text( json.name );
+      $("#condition").text( json.weather[0].main + ': ' + json.weather[0].description);
+      $("#retrieved_temperature").text( Math.round(json.main.temp) + 'C');
+      $("#wind").text(json.wind.speed + ' meter/sec');
+    }
+
+  });}
+
+  $('#submit_name').click(function() {
+    get_data($('#name_input').val());
+  });
 
   $('.temperature-change').click(function() {
     thermostat[this.dataset.direction]();
