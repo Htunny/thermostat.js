@@ -30,13 +30,18 @@ Thermostat.prototype.turnOnPowerSaving = function(){
     {this.maximum_temperature = 25;}
 };
 Thermostat.prototype.turnOffPowerSaving = function(){
-  this.maximum_temperature = 32;
+  if(this.maximum_temperature === 32) {
+  alert("Power saving mode is already off");
+  throw new Error("Power saving mode is already off");}
+  else {
+    {this.maximum_temperature = 32};
+  }
 };
 Thermostat.prototype.reset = function(){
   this.temperature = 20;
 };
 Thermostat.prototype.energyUsage = function(){
-  if (this.temperature < 18) { return "Low";}
-  else if (this.temperature < 25) { return "Medium";}
-  else if (this.temperature >= 25) { return "High";}
+  if (this.temperature < 18) { return "LOW";}
+  else if (this.temperature < 25) { return "MEDIUM";}
+  else if (this.temperature >= 25) { return "HIGH";}
 };

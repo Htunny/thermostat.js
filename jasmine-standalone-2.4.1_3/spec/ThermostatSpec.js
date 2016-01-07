@@ -62,15 +62,15 @@ describe("Errors", function(){
 describe("Energy usage", function(){
   it('returns Low when temperature is below 18', function(){
     thermostat.temperature = 17;
-    expect(thermostat.energyUsage()).toEqual("Low");
+    expect(thermostat.energyUsage()).toEqual("LOW");
   });
   it('returns Medium when temperature is below 25', function(){
     thermostat.temperature = 22;
-    expect(thermostat.energyUsage()).toEqual("Medium");
+    expect(thermostat.energyUsage()).toEqual("MEDIUM");
   });
   it('returns High when temperature is equal or above 25', function(){
     thermostat.temperature = 27;
-    expect(thermostat.energyUsage()).toEqual("High");
+    expect(thermostat.energyUsage()).toEqual("HIGH");
   });
  });
 });

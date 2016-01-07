@@ -40,24 +40,29 @@ $(document).ready(function() {
     get_data($('#name_input').val());
   });
 
-  $('.temperature-change').click(function() {
-    thermostat[this.dataset.direction]();
+  $('.temperature-up').click(function() {
+    thermostat.up();
     energytemp();
   });
 
-  $('#temperature-reset').click(function() {
+  $('.temperature-down').click(function() {
+    thermostat.down();
+    energytemp();
+  });
+
+  $('.temperature-reset').click(function() {
     thermostat.reset();
     energytemp();
   });
 
   $('#powersaving-on').click(function() {
     thermostat.turnOnPowerSaving();
-    $('#power-saving-status').text('on');
+    $('#power-saving-status').text('ON');
   });
 
   $('#powersaving-off').click(function() {
     thermostat.turnOffPowerSaving();
-    $('#power-saving-status').text('off');
+    $('#power-saving-status').text('OFF');
   });
 
 
