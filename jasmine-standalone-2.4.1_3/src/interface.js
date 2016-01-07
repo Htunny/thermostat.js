@@ -12,10 +12,12 @@ $(document).ready(function() {
   function get_data (name) {
 
     var city_name = name || 'London';
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city_name;
+    var token = "&APPID=4db7936adac8e360e07f2f6e0b70d42f";
 
     $.ajax({
 
-    url:"http://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&APPID=4db7936adac8e360e07f2f6e0b70d42f",
+    url: url + token,
 
     type: "GET",
 
