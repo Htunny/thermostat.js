@@ -7,8 +7,7 @@ type: "GET",
 dataType : "json",
 
 success: function( json ) {
-        $( "#weather" ).text( json.title ).appendTo( "body" );
-        id
+        $( "#weather" ).text( json.title ).appendTo( "body" );}
 });
 
 $(document).ready(function() {
@@ -17,7 +16,7 @@ $(document).ready(function() {
   function energytemp() {
     $('#current-temperature').text(thermostat.temperature);
     $('#energy-usage').text(thermostat.energyUsage());
-  };
+  }
 
   energytemp();
 
@@ -33,13 +32,13 @@ $(document).ready(function() {
 
   $('#powersaving-on').click(function() {
     thermostat.turnOnPowerSaving();
-    $('#power-saving-status').text('on')
-  })
+    $('#power-saving-status').text('on');
+  });
 
   $('#powersaving-off').click(function() {
     thermostat.turnOffPowerSaving();
-    $('#power-saving-status').text('off')
-  })
+    $('#power-saving-status').text('off');
+  });
 
 
 
