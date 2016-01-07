@@ -7,19 +7,23 @@ function Thermostat(){
 
 Thermostat.prototype.up = function(){
   if(this.temperature >= this.maximum_temperature){
+    alert("Cannot go above maximum temperature");
     throw new Error("Cannot go above maximum temperature");
   }
   return this.temperature += 1;
 };
 Thermostat.prototype.down = function(){
   if(this.temperature <= this.minimum_temperature){
+    alert("Minimum temperature is 10 degrees");
     throw new Error("Minimum temperature is 10 degrees");
   }
   return this.temperature -= 1;
 };
 Thermostat.prototype.turnOnPowerSaving = function(){
   if(this.maximum_temperature === 25)
-  {throw new Error("Power saving mode is already on");}
+  {
+    alert("Power saving mode is already on");
+    throw new Error("Power saving mode is already on");}
   else
   if (this.temperature >= 25)
     {this.temperature = 25;}

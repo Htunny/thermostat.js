@@ -7,7 +7,7 @@
     <img src='http://icedtea.classpath.org/thermostat/img/thermostat_logo_450px.png'>
     <h2> Version 2.0 </h2>
   <p>
-     Current temperature: <span id="current-temperature">degrees</span>
+     Current temperature: <span id="current-temperature">C</span>
      <br>
       <button class="temperature-change" data-direction="up">+</button>
       <button class="temperature-change" data-direction="down">-</button>
@@ -23,18 +23,17 @@
       Current energy usage level: <span id="energy-usage"></span>
     </p>
   </section>
-
-  <input type='text' id='name_input' placeholder="Enter a City"></input>
-  <input type='button' id="submit_name" value='What is the weather?'></input>
-
+      <br>
   <table id="weather" style="width: 30%">
-    <tr>
+      <strong>Weather in your city</strong>
+      <p>
+      <input type='text' id='name_input' placeholder="Your city name"></input>
+      <input type='button' id="submit_name" value='Search'></input>
+      <tr>
+      </tr>
       <td>City:</td>
       <td id="name"></td>
-    </tr>
     <tr>
-      <td><strong>Weather</strong></td>
-    </tr>
     <tr>
       <td>Condition:</td>
       <td id="condition"></td>
