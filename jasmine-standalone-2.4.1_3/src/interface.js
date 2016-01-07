@@ -15,7 +15,7 @@ $(document).ready(function() {
 
     $.ajax({
 
-    url:"http://api.openweathermap.org/data/2.5/weather?q={input_name}&APPID=4db7936adac8e360e07f2f6e0b70d42f".supplant({input_name: city_name}),
+    url:"http://api.openweathermap.org/data/2.5/weather?q=" + city_name + "&APPID=4db7936adac8e360e07f2f6e0b70d42f",
 
     type: "GET",
 
