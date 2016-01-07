@@ -8,8 +8,7 @@
     <img src='http://icedtea.classpath.org/thermostat/img/thermostat_logo_450px.png'>
     <h2> Version 2.0 </h2>
   <p>
-     <span id="current-temperature"></span>˚C
-     <br>
+     <h3><span id="current-temperature"></span>˚C</h3>
       <button class="temperature-down">-</button>
       <button href="#" class="temperature-up">+</button>
       <button class="temperature-reset">reset</button>
@@ -31,6 +30,12 @@
       <input type='text' id='name_input' placeholder="Your city name"></input>
       <input type='button' id="submit_name" value='Search'></input>
       <tr>
+        <td id="icon"></td>
+      </tr>
+      <p>
+      <tr>
+        <td>Country:</td>
+        <td id="country"></td>
       </tr>
       <td>City:</td>
       <td id="name"></td>
@@ -47,7 +52,6 @@
       <td>Wind Speed:</td>
       <td id="wind"></td>
     </tr>
-
 
   </table>
 

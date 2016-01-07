@@ -1,9 +1,14 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
 
+  var updateColor = function() {
+    $('#energy-usage').attr("class", thermostat.energyUsage());
+  }
+
   function energytemp() {
     $('#current-temperature').text(thermostat.temperature);
     $('#energy-usage').text(thermostat.energyUsage());
+    updateColor();
   }
 
   energytemp();
@@ -30,8 +35,10 @@ $(document).ready(function() {
     success: function( json ) {
       $( "#name" ).text( json.name );
       $("#condition").text( json.weather[0].main + ': ' + json.weather[0].description);
-      $("#retrieved_temperature").text( Math.round(json.main.temp) + 'C');
+      $("#retrieved_temperature").text( Math.round(json.main.temp) + '˚C');
       $("#wind").text(json.wind.speed + ' meter/sec');
+      $("#country").text( json.sys.country );
+      $("#icon").text( json.weather.icon );
     }
 
   });}
@@ -57,13 +64,14 @@ $(document).ready(function() {
 
   $('#powersaving-on').click(function() {
     thermostat.turnOnPowerSaving();
-    $('#power-saving-status').text('ON');
+    $('#power-saving-status').text('ON').bold;
   });
 
   $('#powersaving-off').click(function() {
     thermostat.turnOffPowerSaving();
-    $('#power-saving-status').text('OFF');
+    $('#power-saving-status').text('OFF').bold;
   });
+
 
 
 });

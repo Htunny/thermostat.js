@@ -117,3 +117,13 @@
 	position:relative;
 	top:1px;
 }
+
+.HIGH{
+	color: red;
+}
+.MEDIUM{
+	color: orange;
+}
+.LOW{
+	color: green;
+}
