@@ -9,8 +9,8 @@
   <p>
      Current temperature: <span id="current-temperature">degrees</span>
      <br>
-      <button id="temperature-up">+</button>
-      <button id="temperature-down">-</button>
+      <button class="temperature-change" data-direction="up">+</button>
+      <button class="temperature-change" data-direction="down">-</button>
       <button id="temperature-reset">reset</button>
      <br>
      <br>
@@ -18,10 +18,13 @@
       <br>
       <button id="powersaving-on">PSM on</button>
       <button id="powersaving-off">PSM off</button>
+      <br>
+      <br>
+      Current energy usage level: <span id="energy-usage"></span>
     </p>
   </section>
-  <script src="js/thermostat.js"></script>
-  <script src="js/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="../src/thermostat.js"></script>
+  <script src="../src/interface.js"></script>
 </body>
 </html>

@@ -32,8 +32,8 @@ Thermostat.prototype.turnOffPowerSaving = function(){
 Thermostat.prototype.reset = function(){
   return this.temperature = 20;
 };
-Thermostat.prototype.colour = function(){
-  if (this.temperature < 18) { return "Green"}
-  else if (this.temperature < 25) { return "Yellow"}
-  else if (this.temperature >= 25) { return "Red"}
+Thermostat.prototype.energyUsage = function(){
+  if (this.temperature < 18) { return "Low"}
+  else if (this.temperature < 25) { return "Medium"}
+  else if (this.temperature >= 25) { return "High"}
 };

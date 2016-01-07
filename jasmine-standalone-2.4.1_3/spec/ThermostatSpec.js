@@ -59,18 +59,18 @@ describe("Errors", function(){
   });
 });
 
-describe("Colors", function(){
-  it('returns the color green when temperature is below 18', function(){
+describe("Energy usage", function(){
+  it('returns Low when temperature is below 18', function(){
     thermostat.temperature = 17;
-    expect(thermostat.colour()).toEqual("Green");
+    expect(thermostat.energyUsage()).toEqual("Low");
   });
-  it('returns the color yellow when temperature is below 25', function(){
+  it('returns Medium when temperature is below 25', function(){
     thermostat.temperature = 22;
-    expect(thermostat.colour()).toEqual("Yellow");
+    expect(thermostat.energyUsage()).toEqual("Medium");
   });
-  it('returns the color red when temperature is equal or above 25', function(){
+  it('returns High when temperature is equal or above 25', function(){
     thermostat.temperature = 27;
-    expect(thermostat.colour()).toEqual("Red");
+    expect(thermostat.energyUsage()).toEqual("High");
   });
  });
 });
