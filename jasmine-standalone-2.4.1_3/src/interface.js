@@ -35,7 +35,7 @@ $(document).ready(function() {
 
     success: function( json ) {
       $( "#name" ).text( json.name );
-      $("#condition").text( json.weather[0].main + ': ' + json.weather[0].description);
+      $("#condition").text( json.weather[0].main + ' - ' + json.weather[0].description);
       $("#retrieved_temperature").text( Math.round(json.main.temp) + '˚C');
       $("#wind").text(json.wind.speed + ' meter/sec');
       $("#country").text( json.sys.country );

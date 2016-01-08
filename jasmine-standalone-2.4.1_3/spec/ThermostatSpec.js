@@ -20,7 +20,7 @@ describe("Changes temperature", function(){
   });
   it('raises an error when going above maximum temperature', function(){
     thermostat.temperature = 25;
-    expect(function(){thermostat.up();}).toThrowError("Maximum temperature is 32 degrees");
+    expect(function(){thermostat.up();}).toThrowError("Cannot go above maximum temperature");
   });
 
   it('decrease temperature by 1 with down button', function(){
