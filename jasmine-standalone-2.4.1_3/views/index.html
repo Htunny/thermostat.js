@@ -1,12 +1,16 @@
 <html>
  <head>
+
    <link rel="stylesheet" type="text/css" href="stylesheet.css">
    <meta charset="utf-8">
      <title> Thermostat 2.0 </title>
    </head>
   <body>
+    <div id="border">
     <img src='http://icedtea.classpath.org/thermostat/img/thermostat_logo_450px.png'>
+    <div id="title">
     <h3> Version 2.0 </h3>
+  </div>
   <p>
      <h3><span id="current-temperature"></span>˚C</h3>
       <button class="temperature-down">-</button>
@@ -22,7 +26,7 @@
         <span class="onoffswitch-inner"></span>
         <span class="onoffswitch-switch"></span>
     </label> -->
-</div>
+
       <button id="powersaving-on">PSM on</button>
       <button id="powersaving-off">PSM off</button>
       <br>
@@ -32,7 +36,9 @@
   </section>
       <br>
   <table id="weather" style="width: 30%">
+    <div id="header">
       <strong>Weather in your city</strong>
+    </div>
       <p>
       <input type='text' id='name_input' placeholder="Your city name"></input>
       <input type='button' id="submit_name" value='Search'></input>
@@ -61,7 +67,8 @@
     </tr>
 
   </table>
-
+</div>
+</div>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="../src/thermostat.js"></script>
   <script src="../src/interface.js"></script>
