@@ -29,9 +29,14 @@ body, html {
   /*width: 70px;*/
 	text-align: left;
 	margin: 0 auto;
+	right: 30px;
 	/*height: 60px;*/
 
   /*width: 800px;*/
+}
+
+#power-saving-status {
+	color: silver;
 }
 
 #border {
